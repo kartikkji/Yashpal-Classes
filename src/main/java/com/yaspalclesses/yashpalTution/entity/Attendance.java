@@ -22,8 +22,6 @@ public class Attendance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
-
     @Column(name = "date", nullable = false)
     private LocalDate date;
 
