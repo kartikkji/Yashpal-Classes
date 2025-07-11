@@ -22,8 +22,11 @@ public class Student {
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
-    @Column(name = "phone_number", nullable = false, length = 10)
+    @Column(name = "phone_number",unique = true, nullable = false, length = 10)
     private String phoneNumber;
+
+    @Column(nullable = false)
+    private String password;
 
     @Column(name = "student_class", nullable = false)
     @Enumerated(EnumType.STRING)
