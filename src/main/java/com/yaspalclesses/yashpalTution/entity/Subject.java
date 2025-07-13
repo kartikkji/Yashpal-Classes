@@ -1,6 +1,7 @@
 package com.yaspalclesses.yashpalTution.entity;
 
 import lombok.Getter;
+import lombok.Setter;
 
 
 
@@ -29,8 +30,5 @@ public enum Subject {
         this.displayName = displayName;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
 }
 

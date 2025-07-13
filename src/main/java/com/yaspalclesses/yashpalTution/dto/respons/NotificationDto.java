@@ -6,16 +6,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+public class NotificationDto {
 
-public class DashboardResponse {
-
-    private StudentDto studentDto;
-    private Integer totalAttendance;
-    private double averageMarks;
+    private String title;
+    private String message;
+    private LocalDate date;
 
 }
-

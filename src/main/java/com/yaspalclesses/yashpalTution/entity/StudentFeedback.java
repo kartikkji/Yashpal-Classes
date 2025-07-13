@@ -12,18 +12,20 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "profile_photo")
-public class ProfilePhoto {
+@Table(name = "student_feedback")
+public class StudentFeedback {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "profile_image")
-    private String url;
+
+    @Column(length = 1000)
+    private String feedback;
 
     @OneToOne
-    @JoinColumn(name = "student_id", nullable = false)
+    @JoinColumn(name = "student_id")
     private Student student;
+
 
 }

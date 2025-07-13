@@ -49,4 +49,7 @@ public class Student {
 
     @OneToOne(mappedBy = "student" , cascade = CascadeType.ALL)
     private ProfilePhoto profilePhoto;
+
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private StudentFeedback studentFeedback;
 }

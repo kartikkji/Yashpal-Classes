@@ -30,6 +30,12 @@ public class Teacher {
     @Enumerated(EnumType.STRING)
     private Subject subject;
 
+    private ClassName className;
+
+    @OneToOne(mappedBy = "teacher", cascade = CascadeType.ALL)
+    private TeacherProfilePhoto profilePhoto;
+
+
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
     private List<Notes> notes;
 
