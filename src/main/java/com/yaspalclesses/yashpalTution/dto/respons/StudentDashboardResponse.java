@@ -16,8 +16,9 @@ public class StudentDashboardResponse {
     private StudentDto studentDto;
     private TeacherDto teacherDto;
     private NotificationDto notificationDto;
-    private Integer totalAttendance;
-    private double averageMarks;
+    private FeedbackDto feedbackDto;
+//    private Integer totalAttendance;
+//    private double averageMarks;
 
 }
 

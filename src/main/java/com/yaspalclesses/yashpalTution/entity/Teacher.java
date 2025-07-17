@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,8 @@ public class Teacher {
     @Enumerated(EnumType.STRING)
     private Subject subject;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "student_class")
     private ClassName className;
 
     @OneToOne(mappedBy = "teacher", cascade = CascadeType.ALL)
@@ -42,5 +45,7 @@ public class Teacher {
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
     private List<Lecture> lectures;
 
+    @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Student> students = new ArrayList<>();
 
 }

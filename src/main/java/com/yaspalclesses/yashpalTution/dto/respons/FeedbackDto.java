@@ -1,5 +1,6 @@
 package com.yaspalclesses.yashpalTution.dto.respons;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,11 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TeacherDto {
+public class FeedbackDto {
 
-    private String name;
-    private String subject;
-    private String phone;
-    private String profilePhoto;
-
+    private String feedback;
 }

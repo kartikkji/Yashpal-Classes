@@ -11,8 +11,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentDto {
+
     private String studentName;
     private String profilePhoto;
     private String className;
-    private String feedback;
+
 }
