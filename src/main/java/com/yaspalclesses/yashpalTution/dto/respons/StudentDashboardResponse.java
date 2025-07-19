@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,8 +19,8 @@ public class StudentDashboardResponse {
     private TeacherDto teacherDto;
     private NotificationDto notificationDto;
     private FeedbackDto feedbackDto;
-//    private Integer totalAttendance;
-//    private double averageMarks;
+    private List<AttendanceDto> totalAttendance;
+    private List<StudentRankingDto> ranks;
 
 }
 

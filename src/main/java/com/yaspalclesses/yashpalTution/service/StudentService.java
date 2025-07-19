@@ -2,12 +2,16 @@ package com.yaspalclesses.yashpalTution.service;
 
 
 import com.yaspalclesses.yashpalTution.dto.respons.*;
+import com.yaspalclesses.yashpalTution.entity.Attendance;
 import com.yaspalclesses.yashpalTution.entity.Student;
 import com.yaspalclesses.yashpalTution.entity.Teacher;
+import com.yaspalclesses.yashpalTution.repo.StudentAttendanceRepository;
 import com.yaspalclesses.yashpalTution.repo.StudentRepository;
 import com.yaspalclesses.yashpalTution.repo.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class StudentService {
@@ -17,6 +21,12 @@ public class StudentService {
 
     @Autowired
     private TeacherRepository teacherRepository;
+
+    @Autowired
+    private StudentAttendanceService studentAttendanceService;
+
+
+
 
     public StudentDashboardResponse getDashboardData(Integer id){
 
@@ -65,11 +75,19 @@ public class StudentService {
         teacherDto.setPhone(teacher.getPhoneNumber());
 
 
+
+
+        // get all Attendance
+        List<AttendanceDto> allAttendances = studentAttendanceService.findByStudentId(student.getId());
+
+
+
         // set all dto in dashboard Dto
         response.setStudentDto(studentDto);
         response.setFeedbackDto(feedbackDto);
         response.setTeacherDto(teacherDto);
         response.setNotificationDto(notificationDto);
+        response.setTotalAttendance(allAttendances);
 
 
         return response;
